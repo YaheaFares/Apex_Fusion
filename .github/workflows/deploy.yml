@@ -7,9 +7,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./project        # 👈 ADD THIS
 
     steps:
       - name: Checkout
@@ -30,4 +27,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./project/dist       # 👈 ALSO UPDATE THIS
+          publish_dir: ./dist
